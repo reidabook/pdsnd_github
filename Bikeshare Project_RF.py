@@ -158,7 +158,7 @@ def month_day(response):
     while check == False:
 
         #asks the user to input a month
-        if response == 'month' or response == 'both':
+        if response in ('month','both'):
             month = input("Please type your response as an integer (e.g. January = 1): ")
 
             #validates that the month inputted is a number and aligns with a month value (1-12)
@@ -170,7 +170,7 @@ def month_day(response):
                 month_valid = False
 
         #asks the user to input a day of the week as an integer
-        if response == 'day' or response == 'both':
+        if response in ('day','both'):
             day = input("Which day of the week? Please type your response as an integer (e.g. Monday = 1): ")
 
             #validates that the day is a number and it is between 1-7
