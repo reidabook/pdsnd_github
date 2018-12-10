@@ -21,8 +21,7 @@ Python docs
 https://docs.python.org/3/
 
 Stack Overflow (via google search)
-primarily for clarifying questions on working with DataFrames
+- Primarily for clarifying questions on working with DataFrames
 
 w3schools
-For further detail on python functions
-https://www.w3schools.com/python/
+- For further detail on python functions https://www.w3schools.com/python/
