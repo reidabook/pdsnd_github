@@ -69,7 +69,7 @@ def get_filters():
 
 def city_match(response):
 
-    temp_response = response.replace(" ", "").replace(",", "").lower() #normalizes the input
+    temp_response = clean_string(response)
 
     try:
         if temp_response.isalpha(): #check if all char in the string are alphabetic
@@ -104,7 +104,7 @@ def date_match(response):
     month = 0
     day = 0
 
-    temp_response = response.replace(" ", "").replace(",", "").lower() #normalizes user input
+    temp_response = clean_string(response)
 
     try:
         #check if all char in the string are alphabetic, then matches to option based on response value
@@ -133,7 +133,8 @@ def date_match(response):
     return month, day
 
 
-
+def clean_string(input_string):
+    return input_string.replace(" ", "").replace(",", "").lower() #normalizes user input
 
 def month_day(response):
 
@@ -148,7 +149,7 @@ def month_day(response):
     while check == False:
 
         #asks the user to input a month
-        if response == 'month' or response == 'both':
+        if response in ('month','both'):
             month = input("Please type your response as an integer (e.g. January = 1): ")
 
             #validates that the month inputted is a number and aligns with a month value (1-12)
@@ -160,7 +161,7 @@ def month_day(response):
                 month_valid = False
 
         #asks the user to input a day of the week as an integer
-        if response == 'day' or response == 'both':
+        if response in ('day','both'):
             day = input("Which day of the week? Please type your response as an integer (e.g. Monday = 1): ")
 
             #validates that the day is a number and it is between 1-7
@@ -176,6 +177,9 @@ def month_day(response):
             check = True
         else:
             print("\nPlease enter correct values and try again.\n")
+
+    #print("I am finishing up month_day", month, type(month), day, type(day))
+    return month, day
 
     #print("I am finishing up month_day", month, type(month), day, type(day))
     return month, day
@@ -326,6 +330,7 @@ def time_stats(df, city):
         frequency_print(temp_table.name, int(temp_table.index[0]), temp_table.iloc[0]) #repetitive print function
         endtime(start_time)
         show_rawdata(df['Birth Year'])
+
 
     print('-'*40)
 
