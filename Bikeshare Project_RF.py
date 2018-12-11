@@ -13,9 +13,9 @@ import pandas as pd      #used to load documents and perform calculations
 
 
 #used to map city names to the names of their associated csv files
-CITY_DATA = { 'chicago': 'chicago.csv',
-              'new york city': 'new_york_city.csv',
-              'washington, dc': 'washington.csv' }
+CITY_DATA = { 'chicago': '.gitignore/chicago.csv',
+              'new york city': '.gitignore/new_york_city.csv',
+              'washington, dc': '.gitignore/washington.csv' }
 
 
 # All files must be stored in the same directory as this file.
